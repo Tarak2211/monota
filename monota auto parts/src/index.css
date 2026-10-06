@@ -1,0 +1,66 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, select { font-family: inherit; }
+
+/* Animations */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.slide-in { animation: slideInRight 0.6s ease forwards; }
+.fade-up  { animation: fadeUp 0.5s ease forwards; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f5f5f5; }
+::-webkit-scrollbar-thumb { background: #cc0000; border-radius: 4px; }
+
+/* Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Product card hover actions */
+.product-card .card-actions {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+}
+.product-card:hover .card-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+.product-card:hover .card-img img {
+  transform: scale(1.07);
+}
+.product-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  border-color: #ffcccc !important;
+}
+
+/* Star rating */
+.stars { display: flex; gap: 2px; }
+.star-filled { color: #f5a623; }
+.star-empty  { color: #ddd; }
